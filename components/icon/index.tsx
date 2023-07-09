@@ -11,9 +11,13 @@ type IconName = 'favorite' | 'home' | 'logo' | 'newThread' | 'person' | 'search'
 interface DynamicSvgProps {
   name: IconName;
   fill: string;
+  size?: number;
 }
 
 export function Icon(props: DynamicSvgProps) {
+  const width = props.size || 24;
+  const height = props.size || 24;
+
   let SvgXml;
 
   switch (props.name) {
@@ -41,8 +45,14 @@ export function Icon(props: DynamicSvgProps) {
   }
 
   return (
-    <View style={{ width: 24, height: 24 }}>
-      {SvgXml && <SvgXml width={24} height={24} {...props} />}
+    <View style={{ width, height }}>
+      {SvgXml && (
+        <SvgXml
+          width={width}
+          height={height}
+          {...props}
+        />
+      )}
     </View>
   )
 }
