@@ -2,19 +2,20 @@ import { StyleSheet } from 'react-native';
 import { Text, View } from '@/components/Themed';
 
 import HomeIcon from '../../assets/svg/home.svg';
+import { CommonLayout } from '@/components/layout/common';
 
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
+    <CommonLayout>
       <Text style={styles.title}>Home</Text>
       <HomeIcon width={24} height={24} fill={'#ccc'} />
-    </View>
+    </CommonLayout>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
