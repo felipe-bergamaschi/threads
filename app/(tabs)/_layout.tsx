@@ -1,18 +1,8 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable, useColorScheme } from 'react-native';
+import { Tabs } from 'expo-router';
+import { useColorScheme } from 'react-native';
 
 import Colors from '@/constants/Colors';
-
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
-}
+import { Icon } from '@/components/icon';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -21,19 +11,37 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        headerShown: false,
+        tabBarShowLabel: false,
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <Icon name="home" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="search"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <Icon name="search" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="newThread"
+        options={{
+          tabBarIcon: ({ color }) => <Icon name="comment" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="activity"
+        options={{
+          tabBarIcon: ({ color }) => <Icon name="favorite" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          tabBarIcon: ({ color }) => <Icon name="person" color={color} />,
         }}
       />
     </Tabs>
