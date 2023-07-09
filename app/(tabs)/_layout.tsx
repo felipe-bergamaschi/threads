@@ -17,31 +17,31 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          tabBarIcon: ({ color }) => <Icon name="home" color={color} />,
+          tabBarIcon: ({ color }) => <Icon name="home" fill={color} />,
         }}
       />
       <Tabs.Screen
         name="search"
         options={{
-          tabBarIcon: ({ color }) => <Icon name="search" color={color} />,
+          tabBarIcon: ({ color }) => <Icon name="search" fill={color} />,
         }}
       />
       <Tabs.Screen
         name="newThread"
         options={{
-          tabBarIcon: ({ color }) => <Icon name="comment" color={color} />,
+          tabBarIcon: ({ color }) => <Icon name="newThread" fill={color} />,
         }}
       />
       <Tabs.Screen
         name="activity"
         options={{
-          tabBarIcon: ({ color }) => <Icon name="favorite" color={color} />,
+          tabBarIcon: ({ color }) => <Icon name="favorite" fill={color} />,
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
-          tabBarIcon: ({ color }) => <Icon name="person" color={color} />,
+          tabBarIcon: ({ color }) => <Icon name="person" fill={color} />,
         }}
       />
     </Tabs>
