@@ -1,6 +1,7 @@
 export const styleGuide = {
   spacing: {
-    sm: 8,
+    xs: 8,
+    sm: 14,
     md: 16,
     lg: 24,
   },

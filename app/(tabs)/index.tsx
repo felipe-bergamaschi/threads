@@ -9,9 +9,10 @@ import { faker } from '@faker-js/faker';
 
 export default function TabOneScreen() {
   const username = faker.person.fullName();
-  const paragraphs = faker.lorem.paragraphs();
-
   const profileImage = faker.image.avatar();
+
+  const threadText = faker.lorem.sentence(50);
+  const threadImage = faker.image.url();
 
   const threads: ITheadProps[] = [
     {
@@ -20,8 +21,8 @@ export default function TabOneScreen() {
       profileImage,
       thread: {
         id: 'string',
-        image: 'string',
-        text: paragraphs,
+        image: threadImage,
+        text: threadText,
         createdAt: 'string',
         likes: 12,
         replies: 12,
