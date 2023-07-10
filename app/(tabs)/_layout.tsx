@@ -23,25 +23,37 @@ export default function TabLayout() {
       <Tabs.Screen
         name="search"
         options={{
-          tabBarIcon: ({ color }) => <Icon name="search" fill={color} />,
+          tabBarIcon: ({ color }) => <Icon name="search" stroke={color} />,
         }}
       />
       <Tabs.Screen
         name="newThread"
         options={{
-          tabBarIcon: ({ color }) => <Icon name="newThread" fill={color} />,
+          tabBarIcon: ({ color }) => <Icon name="newThread" stroke={color} />,
         }}
       />
       <Tabs.Screen
         name="activity"
         options={{
-          tabBarIcon: ({ color }) => <Icon name="favorite" fill={color} />,
+          tabBarIcon: ({ color, focused }) => (
+            <Icon
+              name='favorite'
+              fill={focused ? color : 'none'}
+              stroke={color}
+            />
+          ),
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
-          tabBarIcon: ({ color }) => <Icon name="person" fill={color} />,
+          tabBarIcon: ({ color, focused }) => (
+            <Icon
+              name='person'
+              fill={focused ? color : 'none'}
+              stroke={color}
+            />
+          ),
         }}
       />
     </Tabs>

@@ -17,8 +17,9 @@ type IconName = 'favorite' | 'home' | 'logo' | 'newThread' | 'person' | 'search'
 
 interface DynamicSvgProps {
   name: IconName;
-  fill: string;
+  fill?: string;
   size?: number;
+  stroke?: string;
 }
 
 export function Icon(props: DynamicSvgProps) {
