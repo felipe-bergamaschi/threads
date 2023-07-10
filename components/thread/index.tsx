@@ -7,6 +7,7 @@ import { ProfileDetails } from "./profileDetails";
 import { Text } from "../text";
 import { ColImage } from "./colImage";
 import { PostDetails } from "./post";
+import { ThreadActions } from "./actions";
 
 export interface ITheadProps {
   id: string;
@@ -38,11 +39,16 @@ export function Thread(props: ITheadProps) {
       <View style={styles.content}>
         <ColImage profileImage={profileImage} />
 
-        <PostDetails
-          username={username}
-          postMessage={thread.text}
-          postImage={thread.image}
-        />
+        <View style={styles.thread}>
+          <PostDetails
+            username={username}
+            postMessage={thread.text}
+            postImage={thread.image}
+          />
+
+          <ThreadActions />
+        </View>
+
       </View>
     </View>
   )
@@ -60,5 +66,10 @@ export const styles = StyleSheet.create({
   content: {
     flexDirection: 'row',
     gap: 14,
+  },
+
+  thread: {
+    flex: 1,
+    gap: 8,
   }
 });

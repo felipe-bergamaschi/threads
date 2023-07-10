@@ -9,12 +9,7 @@ interface IPostDetailsProps {
 
 export function PostDetails({ username, postMessage, postImage }: IPostDetailsProps) {
   return (
-    <View
-      style={{
-        flex: 1,
-        gap: 8,
-      }}
-    >
+    <View style={{ gap: 4 }}>
       <Text variant="medium" color="primary" weight="bold">
         {username}
       </Text>
@@ -30,6 +25,7 @@ export function PostDetails({ username, postMessage, postImage }: IPostDetailsPr
           height: 200,
           borderRadius: 8,
           objectFit: 'cover',
+          marginTop: 4,
         }}
       />
     </View>
