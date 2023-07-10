@@ -8,7 +8,12 @@ import person from '../../assets/svg/person.svg';
 import search from '../../assets/svg/search.svg';
 import moreHoriz from '../../assets/svg/more-horiz.svg';
 
-type IconName = 'favorite' | 'home' | 'logo' | 'newThread' | 'person' | 'search' | 'moreHoriz';
+import favoriteOutline from '../../assets/svg/favorite-outline.svg';
+import messageOutline from '../../assets/svg/message-outline.svg';
+import repostOutline from '../../assets/svg/repost-outline.svg';
+import sendOutline from '../../assets/svg/send-outline.svg';
+
+type IconName = 'favorite' | 'home' | 'logo' | 'newThread' | 'person' | 'search' | 'moreHoriz' | 'favoriteOutline' | 'messageOutline' | 'repostOutline' | 'sendOutline';
 
 interface DynamicSvgProps {
   name: IconName;
@@ -43,6 +48,18 @@ export function Icon(props: DynamicSvgProps) {
       break;
     case 'moreHoriz':
       SvgXml = moreHoriz;
+      break;
+    case 'favoriteOutline':
+      SvgXml = favoriteOutline;
+      break;
+    case 'messageOutline':
+      SvgXml = messageOutline;
+      break;
+    case 'repostOutline':
+      SvgXml = repostOutline;
+      break;
+    case 'sendOutline':
+      SvgXml = sendOutline;
       break;
     default:
       SvgXml = null;
