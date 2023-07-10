@@ -6,12 +6,13 @@ type ThemeProps = {
   variant: 'small' | 'medium' | 'large';
   color: 'primary' | 'secondary';
   weight?: 'normal' | 'bold';
+  lineHeight?: number;
 };
 
 export type TextProps = ThemeProps & DefaultText['props'];
 
 export function Text(props: TextProps) {
-  const { style, weight, ...otherProps } = props;
+  const { style, weight, lineHeight = 1, ...otherProps } = props;
 
   function getVariant() {
     switch (props.variant) {
@@ -49,6 +50,7 @@ export function Text(props: TextProps) {
       style={[{
         color,
         fontSize: getVariant(),
+        lineHeight: getVariant() * lineHeight,
         fontWeight: weight ?? 'normal',
       }, style]}
       {...otherProps}

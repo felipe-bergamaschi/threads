@@ -5,6 +5,6 @@ export const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: styleGuide.spacing.sm,
+    paddingVertical: styleGuide.spacing.md,
   }
 });

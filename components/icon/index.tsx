@@ -1,12 +1,14 @@
+import { View } from 'react-native';
+
 import favorite from '../../assets/svg/favorite.svg';
 import home from '../../assets/svg/home.svg';
 import logo from '../../assets/svg/logo.svg';
 import newThread from '../../assets/svg/new-thread.svg';
 import person from '../../assets/svg/person.svg';
 import search from '../../assets/svg/search.svg';
-import { View } from 'react-native';
+import moreHoriz from '../../assets/svg/more-horiz.svg';
 
-type IconName = 'favorite' | 'home' | 'logo' | 'newThread' | 'person' | 'search';
+type IconName = 'favorite' | 'home' | 'logo' | 'newThread' | 'person' | 'search' | 'moreHoriz';
 
 interface DynamicSvgProps {
   name: IconName;
@@ -38,6 +40,9 @@ export function Icon(props: DynamicSvgProps) {
       break;
     case 'search':
       SvgXml = search;
+      break;
+    case 'moreHoriz':
+      SvgXml = moreHoriz;
       break;
     default:
       SvgXml = null;
